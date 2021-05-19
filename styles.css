@@ -2,14 +2,13 @@
   font: 13pt Lucida Sans Unicode; /* Шрифт на веб-странице */
   background: black;
   color: white;
-
+  margin: 5px 0px 0px 0px; /* Значения отступов */
  }
  h2 {
   color: #800040; /* Цвет текста */
   margin-top: 0; /* Отступ сверху */
  }
  #container {
-  margin: 0 auto; /* Выравнивание по центру */
   background: #292929;
  }
  #header {
@@ -21,14 +20,15 @@
  }
  #sidebar {
   margin-top: 10px; 
-  width: 10%; /* Ширина слоя */
-  padding: 0 10px; /* Отступы вокруг текста */
+  width: 20%; /* Ширина слоя */
+  padding: 0 15px; /* Отступы вокруг текста */
   float: left; /* Обтекание по правому краю */
   color: white;
  }
  #content {
-  margin-left: 250px; /* Отступ слева */
-  padding: 100px; /* Поля вокруг текста */
+  margin-left: 25%; /* Значения отступов */
+  width: 55%; /* Ширина слоя */
+  padding: 100px; /* Отступы вокруг текста */
   background: #0d0d0d; /* Цвет фона правой колонки */
  }
  #footer {

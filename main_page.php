@@ -14,7 +14,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
   <link rel='stylesheet' type='text/css' href='styles.css'>
  </head>
 
- <body link='white'>
+ <body link='white' vlink='white'>
   <div id="container">
 
    <div id="header">Библиотека котов</div>
@@ -30,7 +30,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
       <button onclick="location.href = 'pushkin.php';" id='btn'>Пушкин</button><br><br>
       <br><br>
-      <button onclick="location.href = 'tolstoy.php';" id='btn'>Толстой</button><br><br>
+      <button onclick="location.href = 'tolstoi.php';" id='btn'>Толстой</button><br><br>
       <br><br>
       <button onclick="location.href = 'gogol.php';" id='btn'>Гоголь</button><br><br>
       <br><br>

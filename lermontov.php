@@ -28,8 +28,12 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
    <div id="content">
 
-      <button onclick="location.href = 'pushkin.php';" id='btn'>Пушкин</button><br><br>
-
+    <ul>
+      <li><a href="books/Лермонтов/бородино.pdf" download>Скачать файл Бородино</a></li>
+      <li><a href="books/Лермонтов/герой нашего времени.pdf" download>Скачать файл Грой нашего времени</a></li>
+      <li><a href="books/Лермонтов/мцыри.pdf" download>Скачать файл Мцыри</a></li>
+    </ul><br><br>
+    <button onclick="location.href = 'main_page.php';" id='btn'>Вернуться на главную страницу</button>
    </div>
    <div id="footer">&copy; Андрей Тощаков 10 "Б"</div>
   </div> 
