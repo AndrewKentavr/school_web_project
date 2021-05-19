@@ -1,10 +1,16 @@
+<?php 
+session_start();
+
+if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
+
+ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Исторический турнир</title>
+  <title>Сори</title>
   <link rel='stylesheet' type='text/css' href='styles.css'>
  </head>
 
@@ -17,12 +23,12 @@
 
     <p><a href="stat.html">О нас</a></p>
     <p><a href="interview.html">Таблица с авторами</a></p>
-    <p><a href="ask.html">Выход из аккаунта</a></p>
+    <p><a href="logout.php">Выход из аккаунта</a></p>
    </div>
 
    <div id="content">
 
-      <button onclick="location.href = 'pyshkin.php';" id='btn'>Пушкин</button><br><br>
+      <button onclick="location.href = 'pushkin.php';" id='btn'>Пушкин</button><br><br>
       <br><br>
       <button onclick="location.href = 'tolstoy.php';" id='btn'>Толстой</button><br><br>
       <br><br>
@@ -34,3 +40,9 @@
   </div> 
  </body>
 </html>
+<?php 
+}else{
+     header("Location: index.php");
+     exit();
+}
+ ?>
