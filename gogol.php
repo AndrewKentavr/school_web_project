@@ -21,18 +21,25 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
    <div id="sidebar">
 
-    <p><a href="stat.html">О нас</a></p>
+    <p><a href="about.php">О нас</a></p>
     <p><a href="table_page.php">Таблица с книгами</a></p>
     <p><a href="logout.php">Выход из аккаунта</a></p>
    </div>
 
    <div id="content">
 
-    <ul>
-      <li><a href="books/Гоголь/вий.pdf" download>Скачать файл Вий</a></li>
-      <li><a href="books/Гоголь/ревизор.pdf" download>Скачать файл Ревизор</a></li>
-      <li><a href="books/Гоголь/шинель.pdf" download>Скачать файл Шиннель</a></li>
-    </ul><br><br>
+    <table align=center>
+      <td>
+        <ul>
+          <li><a href="books/Гоголь/вий.pdf" download>Скачать файл Вий</a></li>
+          <li><a href="books/Гоголь/ревизор.pdf" download>Скачать файл Ревизор</a></li>
+          <li><a href="books/Гоголь/шинель.pdf" download>Скачать файл Шиннель</a></li>
+        </ul>
+      </td>
+      <td align=center>
+        <img src="img/gogol.jpeg" width="50%">
+      </td>
+    </table><br><br>
     <button onclick="location.href = 'main_page.php';" id='btn'>Вернуться на главную страницу</button>
    </div>
    <div id="footer">&copy; Андрей Тощаков 10 "Б"</div>

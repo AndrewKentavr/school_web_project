@@ -21,16 +21,19 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
    <div id="sidebar">
 
-    <p><a href="stat.html">О нас</a></p>
+    <p><a href="about.php">О нас</a></p>
     <p><a href="table_page.php">Таблица с книгами</a></p>
     <p><a href="logout.php">Выход из аккаунта</a></p>
    </div>
 
    <div id="content">
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+<!--         кнопка поиска -------->
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Поиск по годам" title="Type in a name">
+<!--         кнопка сортировки по алфавиту----->
+        <p><button onclick="sortTable()" id='sort_btn'>Сортировка по алфавиту автора</button></p>
+        <p><button onclick="sortTable_2()" id='sort_btn'>Сортировка по алфавиту названий книг</button></p>
 
         <table id='tableMainPage' align=center border="1">
-        <!--<table width=70% text-align=center background-color=#ff3bf8 border=1 align=center>-->
           <tr class='header'>
             <th>id</th>
             <th>author</th>
@@ -58,7 +61,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             $conn->close();
           ?>
         </table>
-          <!-- В этом js идёт фильтрация-->
+          <!----------------------- В этом js идёт поиск ------------------------------------------- -->
         <script>
         function myFunction() {
           var input, filter, table, tr, td, i, txtValue;
@@ -78,7 +81,59 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             }       
           }
         }
+        // <!----------------------- В этом js идёт сортировка по алфавит ---------------------------------------- -->
+        function sortTable() {
+          var table, rows, switching, i, x, y, shouldSwitch;
+          table = document.getElementById("tableMainPage");
+          switching = true;
+
+          while (switching) {
+            switching = false;
+            rows = table.rows;
+
+            for (i = 1; i < (rows.length - 1); i++) {
+              shouldSwitch = false;
+
+              x = rows[i].getElementsByTagName("TD")[1];
+              y = rows[i + 1].getElementsByTagName("TD")[1];
+              if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                shouldSwitch = true;
+                break;
+              }
+            }
+            if (shouldSwitch) {
+              rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+              switching = true;
+            }
+          }
+        }
+        function sortTable_2() {
+          var table, rows, switching, i, x, y, shouldSwitch;
+          table = document.getElementById("tableMainPage");
+          switching = true;
+
+          while (switching) {
+            switching = false;
+            rows = table.rows;
+
+            for (i = 1; i < (rows.length - 1); i++) {
+              shouldSwitch = false;
+
+              x = rows[i].getElementsByTagName("TD")[2];
+              y = rows[i + 1].getElementsByTagName("TD")[2];
+              if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                shouldSwitch = true;
+                break;
+              }
+            }
+            if (shouldSwitch) {
+              rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+              switching = true;
+            }
+          }
+        }
         </script>
+<!--         ------------------------------------------------------------------------------------- -->
         <br><br>
         <button onclick="location.href = 'main_page.php';" id='btn'>Вернуться на главную страницу</button>
    </div>

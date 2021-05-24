@@ -21,18 +21,26 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
    <div id="sidebar">
 
-    <p><a href="stat.html">О нас</a></p>
+    <p><a href="about.php">О нас</a></p>
     <p><a href="table_page.php">Таблица с книгами</a></p>
+    <p><a href="author_description.php">Посмотреть описание авторов</a></p>
     <p><a href="logout.php">Выход из аккаунта</a></p>
    </div>
 
    <div id="content">
 
-    <ul>
-      <li><a href="books/Лермонтов/бородино.pdf" download>Скачать файл Бородино</a></li>
-      <li><a href="books/Лермонтов/герой нашего времени.pdf" download>Скачать файл Герой нашего времени</a></li>
-      <li><a href="books/Лермонтов/мцыри.pdf" download>Скачать файл Мцыри</a></li>
-    </ul><br><br>
+    <table align=center>
+      <td>
+        <ul>
+          <li><a href="books/Лермонтов/бородино.pdf" download>Скачать файл Бородино</a></li>
+          <li><a href="books/Лермонтов/герой нашего времени.pdf" download>Скачать файл Герой нашего времени</a></li>
+          <li><a href="books/Лермонтов/мцыри.pdf" download>Скачать файл Мцыри</a></li>
+        </ul>
+      </td>
+      <td align=center>
+        <img src="img/lermontov.jpeg" width="50%">
+      </td>
+    </table><br><br>
     <button onclick="location.href = 'main_page.php';" id='btn'>Вернуться на главную страницу</button>
    </div>
    <div id="footer">&copy; Андрей Тощаков 10 "Б"</div>

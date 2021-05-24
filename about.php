@@ -28,19 +28,10 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
    </div>
 
    <div id="content">
+    <!--тут текст-->
 
-    <table align=center>
-      <td>
-        <ul>
-          <li><a href="books/Пушкин/евгений_онегин.pdf" download>Скачать файл Евгений Онегин</a></li>
-          <li><a href="books/Пушкин/капитанская дочка.pdf" download>Скачать файл Капитанская дочка</a></li>
-          <li><a href="books/Пушкин/пиковая дама.pdf" download>Скачать файл Пиковая дама</a></li>
-        </ul>
-      </td>
-      <td align=center>
-        <img src="img/pushkin.jpeg" width="50%">
-      </td>
-    </table><br><br>
+    <p>Этот проект создан для просвещения молодых котов. С помощью этого сайта котята могут узнать о великих русских писателях. Просветите ваших котят, подписавшись прямо сейчас без смс и ммс, со скидкой всего лишь за 99 рублей в час. АТВЕЧАЮ САЙТ ТОПЧЕГ</p>
+
     <button onclick="location.href = 'main_page.php';" id='btn'>Вернуться на главную страницу</button>
    </div>
    <div id="footer">&copy; Андрей Тощаков 10 "Б"</div>
