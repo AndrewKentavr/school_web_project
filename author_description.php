@@ -23,14 +23,21 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
     <p><a href="about.php">О нас</a></p>
     <p><a href="table_page.php">Таблица с книгами</a></p>
+    <p><a href="author_description.php">Посмотреть описание авторов</a></p>
     <p><a href="logout.php">Выход из аккаунта</a></p>
    </div>
 
    <div id="content">
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for description.." title="Type in a name">
 
+
+<!--         <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for description.." title="Type in a name">
+ -->          
+        <label for="name" class="form__label">Поиск по калонке "description"</label>
+        <input type="text" id='myInput' onkeyup="myFunction()" placeholder="Search for description.." name="name" >
+        <br><br>
+        <p><button onclick="sortTable()" id='sort_btn'>Упорядочивание по алфавиту автора</button></p>
+        <br><br>
         <table id='tableMainPage' align=center border="1">
-        <!--<table width=70% text-align=center background-color=#ff3bf8 border=1 align=center>-->
           <tr class='header'>
             <th>author</th>
             <th>description</th>
@@ -75,6 +82,34 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             }       
           }
         }
+        // -----------------------------------------------------------------------------
+        function sortTable() {
+          var table, rows, switching, i, x, y, shouldSwitch;
+          table = document.getElementById("tableMainPage");
+          switching = true;
+
+          while (switching) {
+            switching = false;
+            rows = table.rows;
+
+            for (i = 1; i < (rows.length - 1); i++) {
+              shouldSwitch = false;
+
+              x = rows[i].getElementsByTagName("TD")[0];
+              y = rows[i + 1].getElementsByTagName("TD")[0];
+              if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                shouldSwitch = true;
+                break;
+              }
+            }
+            if (shouldSwitch) {
+              rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+              switching = true;
+            }
+          }
+        }
+    // -----------------------------------------------------------------------------
+
         </script>
         <br><br>
         <button onclick="location.href = 'main_page.php';" id='btn'>Вернуться на главную страницу</button>

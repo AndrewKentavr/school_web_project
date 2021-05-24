@@ -15,8 +15,8 @@
   font-size: 3.2em; /* Размер текста */
   text-align: center; /* Выравнивание по центру */
   padding: 5px; /* Отступы вокруг текста */
-  background: #808080; /* Цвет фона шапки */
-  color: #ffe; /* Цвет текста */
+  background: white; /* Цвет фона шапки */
+  color: black; /* Цвет текста */
  }
  #sidebar {
   margin-top: 10px; 
@@ -93,5 +93,12 @@
         }
     }
 
+
+}
+
+#myInput {
+  width:290px;
+  padding:9px;
+  font-size: 0.8em;
 
 }

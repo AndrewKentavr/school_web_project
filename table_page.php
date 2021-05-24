@@ -23,15 +23,19 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
     <p><a href="about.php">О нас</a></p>
     <p><a href="table_page.php">Таблица с книгами</a></p>
+    <p><a href="author_description.php">Посмотреть описание авторов</a></p>
     <p><a href="logout.php">Выход из аккаунта</a></p>
    </div>
 
    <div id="content">
 <!--         кнопка поиска -------->
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Поиск по годам" title="Type in a name">
-<!--         кнопка сортировки по алфавиту----->
-        <p><button onclick="sortTable()" id='sort_btn'>Сортировка по алфавиту автора</button></p>
-        <p><button onclick="sortTable_2()" id='sort_btn'>Сортировка по алфавиту названий книг</button></p>
+        <label for="name" class="form__label">Поиск по калонке "description"</label>
+        <input type="text" id='myInput' onkeyup="myFunction()" placeholder="Search for description.." name="name" >
+        <br><br>
+
+<!--         кнопка упорядочивание по алфавиту----->
+        <p><button onclick="sortTable()" id='sort_btn'>Упорядочивание по алфавиту автора</button></p>
+        <p><button onclick="sortTable_2()" id='sort_btn'>Упорядочивание по алфавиту названий книг</button></p>
 
         <table id='tableMainPage' align=center border="1">
           <tr class='header'>
@@ -81,7 +85,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             }       
           }
         }
-        // <!----------------------- В этом js идёт сортировка по алфавит ---------------------------------------- -->
+        // <!----------------------- В этом js идёт упорядочивание по алфавит ---------------------------------------- -->
         function sortTable() {
           var table, rows, switching, i, x, y, shouldSwitch;
           table = document.getElementById("tableMainPage");
