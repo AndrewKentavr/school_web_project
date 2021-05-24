@@ -22,7 +22,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
    <div id="sidebar">
 
     <p><a href="stat.html">О нас</a></p>
-    <p><a href="interview.html">Таблица с авторами</a></p>
+    <p><a href="table_page.php">Таблица с книгами</a></p>
     <p><a href="logout.php">Выход из аккаунта</a></p>
    </div>
 
@@ -30,7 +30,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
     <ul>
       <li><a href="books/Лермонтов/бородино.pdf" download>Скачать файл Бородино</a></li>
-      <li><a href="books/Лермонтов/герой нашего времени.pdf" download>Скачать файл Грой нашего времени</a></li>
+      <li><a href="books/Лермонтов/герой нашего времени.pdf" download>Скачать файл Герой нашего времени</a></li>
       <li><a href="books/Лермонтов/мцыри.pdf" download>Скачать файл Мцыри</a></li>
     </ul><br><br>
     <button onclick="location.href = 'main_page.php';" id='btn'>Вернуться на главную страницу</button>

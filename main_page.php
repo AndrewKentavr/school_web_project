@@ -23,6 +23,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
     <p><a href="stat.html">О нас</a></p>
     <p><a href="table_page.php">Таблица с книгами</a></p>
+    <p><a href="AddImage.php">Добавить книги на сайт</a></p>
     <p><a href="logout.php">Выход из аккаунта</a></p>
    </div>
 
