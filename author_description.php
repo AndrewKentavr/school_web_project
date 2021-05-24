@@ -44,7 +44,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
           </tr>
 
           <?php
-            $conn = mysqli_connect("localhost", "root", "root", "library");
+            include "db_conn.php";
             if ($conn->connect_error) {
               die("Connection failed: " . $conn->connect_error);
             }
